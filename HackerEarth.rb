@@ -2,31 +2,31 @@ require 'net/http'
 
 class HackerEarth
 
-	@@ENDPOINT_COMPILE	=	"http://api.hackerearth.com/code/compile/"
-	@@ENDPOINT_RUN		=	"http://api.hackerearth.com/code/run/"
+	@@ENDPOINT_COMPILE  =  "http://api.hackerearth.com/code/compile/"
+	@@ENDPOINT_RUN  =  "http://api.hackerearth.com/code/run/"
 
 	attr_accessor :source
 	attr_accessor :lang
 	attr_accessor :input
 	
 	def initialize(secret, source, lang, input = nil, tlimit = 5, mlimit = 262144, async = 0)
-		@client_secret 	=	secret
-		@source			=	source
-		@lang			=	lang
-		@input			=	input
-		@tlimit			=	tlimit <= 5 ? tlimit : 5
-		@mlimit			=	mlimit <= 262144 ? mlimit : 262144
-		@async			=	async
+		@client_secret 	=  secret
+		@source		=  source
+		@lang		=  lang
+		@input		=  input
+		@tlimit		=  tlimit <= 5 ? tlimit : 5
+		@mlimit		=  mlimit <= 262144 ? mlimit : 262144
+		@async		=  async
 	end	
 
 	def init_param
 		@params = {
-			:client_secret 	=>	@client_secret,
-			:source 		=>	@source,
-			:lang 			=>	@lang,
-			:async 			=>	@async,
-			:time_limit 	=>	@tlimit,
-			:memory_limit 	=>	@mlimit
+			:client_secret 	=>  @client_secret,
+			:source 	=>  @source,
+			:lang 		=>  @lang,
+			:async 		=>  @async,
+			:time_limit 	=>  @tlimit,
+			:memory_limit 	=>  @mlimit
 		}
 		if @input
 			@params.store(:input,@input)
