@@ -47,7 +47,7 @@ puts JSON.pretty_generate JSON.parse(hackerearth.run)
 You can compile/run multiple times by just changing source, language or input like so:
 
 ```ruby
-hackerearth.source = open('some_other_file.c')
+hackerearth.source = open('some_other_file.c').read
 hackerearth.lang = 'C'
 hackerearth.input = '4 32'
 
