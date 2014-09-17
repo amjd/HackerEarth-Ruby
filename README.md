@@ -1,6 +1,15 @@
 #HackerEarth API wrapper
 
-This is a simple API wrapper for HackerEarth. Nothing speaks better than an example, so here it is:
+This is a simple API wrapper for HackerEarth.
+
+###Usage
+To use this wrapper create an object with the mandatory parameters: API key (secret), source of the file to compile/run, and the language.
+
+```ruby
+hackerearth = HackerEarth.new(secret,source,lang)
+```
+
+Here's a fuller example:
 
 ```ruby
 require 'PATH/TO/HackerEarth.rb'
@@ -15,7 +24,7 @@ hackerearth = HackerEarth.new(secret,source,lang)
 puts JSON.pretty_generate JSON.parse(hackerearth.run)
 ```
 
-###Output
+####Output
 
 ```json
 {
